@@ -11,4 +11,4 @@ class UserValidationService:
     @staticmethod
     async def validate_user_data(token: TokenDep):
         config = _get_auth_config()
-        return decode_auth_jwt_token(token=token, secret_key=config.SECRET_KEY)
+        return decode_auth_jwt_token(token=token.credentials, secret_key=config.SECRET_KEY)
