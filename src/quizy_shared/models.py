@@ -1,4 +1,4 @@
-from sqlalchemy import Text, Boolean, Integer, ForeignKey
+from sqlalchemy import Text, Boolean, Integer, ForeignKey, MetaData
 
 from sqlalchemy.orm import DeclarativeBase
 import uuid
@@ -8,6 +8,7 @@ from sqlalchemy.dialects.mysql import VARCHAR
 from sqlalchemy.orm import Mapped, relationship
 from datetime import datetime
 
+metadata = MetaData()
 
 class Base(DeclarativeBase):
     ...
