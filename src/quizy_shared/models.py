@@ -17,7 +17,7 @@ class Quiz(Base):
 
     id: Mapped[str] = Column(UUID, primary_key=True, default=uuid.uuid4)
     name: Mapped[str] = Column(VARCHAR(36), nullable=False)
-    description: Mapped[str] = Column(VARCHAR(255), nullable=False)
+    description: Mapped[str] = Column(VARCHAR(255), nullable=True)
 
     creator_id: Mapped[str] = Column(UUID, nullable=False)
     created_at: Mapped[datetime] = Column(DateTime, nullable=False, default=func.now())
