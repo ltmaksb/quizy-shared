@@ -1,7 +1,7 @@
 from typing import Optional, Annotated
 
 from pydantic import BaseModel, constr, ConfigDict
-
+from datetime import datetime
 
 class QuizBase(BaseModel):
     model_config = ConfigDict(from_attributes=True)
@@ -12,7 +12,8 @@ class QuizBase(BaseModel):
 class Quiz(QuizBase):
     id: str
     creator_id: str
-    created_at: str
+
+    created_at: datetime
 
 class Q(BaseModel):
     model_config = ConfigDict(from_attributes=True)
